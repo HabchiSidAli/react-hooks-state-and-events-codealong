@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Toggle() {
-  return <button>OFF</button>;
+  const [buttonText, setButtonText] = useState("OFF");
+
+  function buttonHandler () {
+    if (buttonText === 'OFF'){
+      setButtonText('ON');
+    } else {
+      setButtonText('OFF');
+    };
+  };
+
+  return <button onClick={buttonHandler}>{buttonText}</button>;
 }
 
 export default Toggle;
